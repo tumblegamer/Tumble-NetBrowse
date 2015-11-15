@@ -37,6 +37,7 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTumbleNetBrowseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.urlBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
@@ -48,7 +49,6 @@
             this.refreshButon = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.aboutTumbleNetBrowseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -122,6 +122,13 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutTumbleNetBrowseToolStripMenuItem
+            // 
+            this.aboutTumbleNetBrowseToolStripMenuItem.Name = "aboutTumbleNetBrowseToolStripMenuItem";
+            this.aboutTumbleNetBrowseToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.aboutTumbleNetBrowseToolStripMenuItem.Text = "About Tumble NetBrowse";
+            this.aboutTumbleNetBrowseToolStripMenuItem.Click += new System.EventHandler(this.aboutTumbleNetBrowseToolStripMenuItem_Click);
             // 
             // urlBox
             // 
@@ -233,13 +240,6 @@
             this.label1.Size = new System.Drawing.Size(9, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "|";
-            // 
-            // aboutTumbleNetBrowseToolStripMenuItem
-            // 
-            this.aboutTumbleNetBrowseToolStripMenuItem.Name = "aboutTumbleNetBrowseToolStripMenuItem";
-            this.aboutTumbleNetBrowseToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.aboutTumbleNetBrowseToolStripMenuItem.Text = "About Tumble NetBrowse";
-            this.aboutTumbleNetBrowseToolStripMenuItem.Click += new System.EventHandler(this.aboutTumbleNetBrowseToolStripMenuItem_Click);
             // 
             // tumblenet
             // 
