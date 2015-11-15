@@ -36,6 +36,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTumbleNetBrowseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.urlBox = new System.Windows.Forms.TextBox();
@@ -44,11 +45,9 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.backButton = new System.Windows.Forms.Button();
             this.forwardButton = new System.Windows.Forms.Button();
-            this.sepeator1 = new System.Windows.Forms.Label();
             this.stopButton = new System.Windows.Forms.Button();
             this.refreshButon = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuBar.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,11 +57,11 @@
             this.webBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser.Location = new System.Drawing.Point(0, 53);
+            this.webBrowser.Location = new System.Drawing.Point(0, 68);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
             this.webBrowser.ScrollBarsEnabled = false;
-            this.webBrowser.Size = new System.Drawing.Size(801, 418);
+            this.webBrowser.Size = new System.Drawing.Size(801, 403);
             this.webBrowser.TabIndex = 0;
             this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
             // 
@@ -111,9 +110,18 @@
             // 
             // toolsToolStripMenuItem
             // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -134,9 +142,9 @@
             // 
             this.urlBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.urlBox.Location = new System.Drawing.Point(256, 27);
+            this.urlBox.Location = new System.Drawing.Point(293, 35);
             this.urlBox.Name = "urlBox";
-            this.urlBox.Size = new System.Drawing.Size(533, 20);
+            this.urlBox.Size = new System.Drawing.Size(300, 20);
             this.urlBox.TabIndex = 2;
             this.urlBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBox_KeyDown);
             // 
@@ -160,16 +168,16 @@
             // 
             this.toolStripStatusLabel.AutoToolTip = true;
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(44, 17);
-            this.toolStripStatusLabel.Text = "dsfsfsd";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // backButton
             // 
             this.backButton.AutoSize = true;
             this.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.backButton.Location = new System.Drawing.Point(12, 24);
+            this.backButton.Image = global::Tumble_NetBrowse.Properties.Resources.back;
+            this.backButton.Location = new System.Drawing.Point(12, 27);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(23, 23);
+            this.backButton.Size = new System.Drawing.Size(38, 38);
             this.backButton.TabIndex = 4;
             this.backButton.Text = "<";
             this.backButton.UseVisualStyleBackColor = true;
@@ -179,29 +187,20 @@
             // 
             this.forwardButton.AutoSize = true;
             this.forwardButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.forwardButton.Location = new System.Drawing.Point(41, 24);
+            this.forwardButton.Image = global::Tumble_NetBrowse.Properties.Resources.forward;
+            this.forwardButton.Location = new System.Drawing.Point(56, 27);
             this.forwardButton.Name = "forwardButton";
-            this.forwardButton.Size = new System.Drawing.Size(23, 23);
+            this.forwardButton.Size = new System.Drawing.Size(38, 38);
             this.forwardButton.TabIndex = 4;
             this.forwardButton.Text = ">";
             this.forwardButton.UseVisualStyleBackColor = true;
             this.forwardButton.Click += new System.EventHandler(this.forwardButton_Click);
             // 
-            // sepeator1
-            // 
-            this.sepeator1.AutoSize = true;
-            this.sepeator1.Location = new System.Drawing.Point(70, 30);
-            this.sepeator1.Name = "sepeator1";
-            this.sepeator1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sepeator1.Size = new System.Drawing.Size(9, 13);
-            this.sepeator1.TabIndex = 5;
-            this.sepeator1.Text = "|";
-            // 
             // stopButton
             // 
             this.stopButton.AutoSize = true;
             this.stopButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.stopButton.Location = new System.Drawing.Point(85, 24);
+            this.stopButton.Location = new System.Drawing.Point(110, 35);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(39, 23);
             this.stopButton.TabIndex = 6;
@@ -213,7 +212,7 @@
             // 
             this.refreshButon.AutoSize = true;
             this.refreshButon.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.refreshButon.Location = new System.Drawing.Point(130, 24);
+            this.refreshButon.Location = new System.Drawing.Point(155, 35);
             this.refreshButon.Name = "refreshButon";
             this.refreshButon.Size = new System.Drawing.Size(54, 23);
             this.refreshButon.TabIndex = 6;
@@ -225,21 +224,12 @@
             // 
             this.homeButton.AutoSize = true;
             this.homeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.homeButton.Location = new System.Drawing.Point(205, 25);
+            this.homeButton.Location = new System.Drawing.Point(228, 35);
             this.homeButton.Name = "homeButton";
             this.homeButton.Size = new System.Drawing.Size(45, 23);
             this.homeButton.TabIndex = 7;
             this.homeButton.Text = "Home";
             this.homeButton.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(9, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "|";
             // 
             // tumblenet
             // 
@@ -248,13 +238,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 496);
-            this.Controls.Add(this.homeButton);
-            this.Controls.Add(this.refreshButon);
-            this.Controls.Add(this.stopButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.sepeator1);
-            this.Controls.Add(this.forwardButton);
             this.Controls.Add(this.backButton);
+            this.Controls.Add(this.refreshButon);
+            this.Controls.Add(this.forwardButton);
+            this.Controls.Add(this.stopButton);
+            this.Controls.Add(this.homeButton);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.urlBox);
             this.Controls.Add(this.webBrowser);
@@ -286,16 +274,15 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button forwardButton;
-        private System.Windows.Forms.Label sepeator1;
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button refreshButon;
         private System.Windows.Forms.Button homeButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutTumbleNetBrowseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 

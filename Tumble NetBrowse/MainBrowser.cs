@@ -12,22 +12,6 @@ namespace Tumble_NetBrowse
 {
     public partial class tumblenet : Form
     {
-        public tumblenet()
-        {
-            InitializeComponent();
-            webBrowser.DocumentTitleChanged +=
-            new EventHandler(webBrowser_DocumentTitleChanged);
-            webBrowser.StatusTextChanged +=
-            new EventHandler(webBrowser_StatusTextChanged);
-
-            webBrowser.GoHome();
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Navigate(String address)
         {
             if (String.IsNullOrEmpty(address)) return;
@@ -45,6 +29,29 @@ namespace Tumble_NetBrowse
             {
                 return;
             }
+        }
+
+        public tumblenet()
+        {
+            InitializeComponent();
+            webBrowser.DocumentTitleChanged +=
+            new EventHandler(webBrowser_DocumentTitleChanged);
+            webBrowser.StatusTextChanged +=
+            new EventHandler(webBrowser_StatusTextChanged);
+            //webBrowser.ProgressChanged += 
+            //new EventHandler(webBrowser_ProgressChanged);
+
+            Navigate(Properties.Settings.Default.homePage);
+        }
+
+        private void webBrowser_ProgressChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void webBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
@@ -97,12 +104,17 @@ namespace Tumble_NetBrowse
 
         private void homeButton_Click(object sender, EventArgs e)
         {
-            webBrowser.GoHome();
+            Navigate(Properties.Settings.Default.homePage);
         }
 
         private void aboutTumbleNetBrowseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new About().Show();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Settings().Show();
         }
     }
 }
