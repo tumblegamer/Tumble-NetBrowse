@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="homePage" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://tumblegamer.tk</Value>
+      <Value Profile="(Default)">http://tumblegamer.ga</Value>
     </Setting>
   </Settings>
 </SettingsFile>
