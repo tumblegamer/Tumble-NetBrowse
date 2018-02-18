@@ -28,5 +28,15 @@ namespace Tumble_NetBrowse
             Properties.Settings.Default.homePage = homePageBox.Text;
             Close();
         }
+
+        private void currentPageButton_Click(object sender, EventArgs e)
+        {
+            homePageBox.Text = Properties.Settings.Default.currentPage;
+        }
+
+        private void defaultButton_Click(object sender, EventArgs e)
+        {
+            homePageBox.Text = Properties.Settings.Default.defaultHomePage;
+        }
     }
 }

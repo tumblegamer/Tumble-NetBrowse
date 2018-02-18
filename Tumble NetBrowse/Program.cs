@@ -14,6 +14,7 @@ namespace Tumble_NetBrowse
         [STAThread]
         static void Main()
         {
+            Properties.Settings.Default.homePage = Properties.Settings.Default.defaultHomePage;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new tumblenet());

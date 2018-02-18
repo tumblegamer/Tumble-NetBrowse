@@ -3,7 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="homePage" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://tumblegamer.ga</Value>
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="defaultHomePage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://tumblegamer.blog.tumblenet.ga</Value>
+    </Setting>
+    <Setting Name="currentPage" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

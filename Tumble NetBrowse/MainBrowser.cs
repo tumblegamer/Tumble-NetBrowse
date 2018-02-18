@@ -44,9 +44,18 @@ namespace Tumble_NetBrowse
             Navigate(Properties.Settings.Default.homePage);
         }
 
-        private void webBrowser_ProgressChanged(object sender, EventArgs e)
+        private void webBrowser_ProgressChanged(Object sender, WebBrowserProgressChangedEventArgs e)
         {
-            
+            toolStripProgressBar.Visible = (int)e.CurrentProgress != -1;
+            if ((int)e.CurrentProgress != -1)
+            {
+                toolStripProgressBar.Maximum = (int)e.MaximumProgress;
+                if ((int)e.CurrentProgress<= (int)e.MaximumProgress)
+                {
+
+                    toolStripProgressBar.Value = (int)e.CurrentProgress;
+                }
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,6 +123,7 @@ namespace Tumble_NetBrowse
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.currentPage = urlBox.Text;
             new Settings().Show();
         }
     }
